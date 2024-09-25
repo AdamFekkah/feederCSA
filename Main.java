@@ -3,9 +3,7 @@ public class Main {
         // Construct a Feeder object with the default constructor
         Feeder f = new Feeder();
         System.out.println(f); // This will print the object reference like Feeder@<hashcode>
-        // Uncomment the next line, you'll get an error since currentFood is private
-        // System.out.println(f.currentFood);
-
+        
         // Use the accessor method to print the current food
         System.out.println("Current food in feeder f: " + f.getCurrentFood());
 
@@ -18,5 +16,16 @@ public class Main {
 
         // Print the remaining food after simulation
         System.out.println("Food remaining in feeder g after one day: " + g.getCurrentFood());
+
+        // Simulate multiple days of feeding
+        int numBirds = 10;
+        int numDays = 4;
+        int daysWithFood = g.simulateManyDays(numBirds, numDays);
+
+        // Print the number of days food was available
+        System.out.println("Number of days birds or a bear found food: " + daysWithFood);
+
+        // Print the remaining food after multiple days of simulation
+        System.out.println("Food remaining in feeder g after " + numDays + " days: " + g.getCurrentFood());
     }
 }
