@@ -35,4 +35,17 @@ public class Feeder {
 
         System.out.println("Birds ate " + totalFoodNeeded + " units of food today.");
     }
+    public int simulateManyDays(int numBirds, int numDays) {
+        int daysWithFood = 0;
+        
+        for (int i = 0; i < numDays; i++) {
+            if (currentFood > 0) {
+                daysWithFood++;
+            }
+            simulateOneDay(numBirds); // Simulate one day of feeding
+        }
+        
+        return daysWithFood;
+    }
+
 }
